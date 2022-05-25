@@ -9,12 +9,12 @@
     window.onload = function() {
         AFRAME.registerComponent('event-listener', {
             init: function () {
-                this.audio = document.querySelector("#laugh");
+                this.audio = document.querySelector("#ft");
 
                 this.el.addEventListener('click', function (e) {
 		
                     let cop = document.querySelector("#cop-model")
-		    dk.setAttribute("animation-mixer", "clip: walking; loop: repeat;");
+		    cop.setAttribute("animation-mixer", "clip: walking; loop: repeat;");
                     this.audio.play();
 			
                   console.log(e)
@@ -63,7 +63,7 @@
     <a-scene renderer="colorManagement: true">
        <a-assets>
         <a-asset-item id="cop" response-type="arraybuffer" src="./cop.glb"></a-asset-item>
-        <audio id="laugh" src="./assets/laugh.wav"></audio>
+        <audio id="ft" src="./assets/ft.wav"></audio>
       </a-assets>
       <a-entity event-listener id="cop-model"  
         gltf-model="#cop" 
